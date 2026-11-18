@@ -101,10 +101,10 @@ tbody th { font-weight: 600; color: var(--ink); }
   <thead><tr><th scope="col">Topic</th><th scope="col">Practice</th></tr></thead>
   <tbody>
     <tr><th scope="row">Account or sign-in</th><td>None required or offered.</td></tr>
-    <tr><th scope="row">Ads, analytics, tracking</th><td>None. No advertising, analytics or tracking libraries are included.</td></tr>
-    <tr><th scope="row">Data sent to the developer</th><td>None. The developer operates no server and receives nothing from the app.</td></tr>
-    <tr><th scope="row">Location</th><td>Optional. Processed on the device to select a prayer-time zone; never stored or transmitted.</td></tr>
-    <tr><th scope="row">Network use</th><td>Quran recitation streaming from everyayah.com, only when you start playback.</td></tr>
+    <tr><th scope="row">Ads, analytics, tracking</th><td>None. No advertising, analytics or tracking libraries are included. Optional crash reports are off unless you turn them on (section 4.6).</td></tr>
+    <tr><th scope="row">Data sent to the developer</th><td>Only crash reports, and only if you turn them on (section 4.6). The developer operates no server.</td></tr>
+    <tr><th scope="row">Location</th><td>Optional. Processed on the device to select a prayer-time zone and to list mosques near you; never stored or transmitted.</td></tr>
+    <tr><th scope="row">Network use</th><td>Quran recitation streaming from everyayah.com, only when you start playback; crash reports to Google Firebase Crashlytics, only if you turn them on.</td></tr>
     <tr><th scope="row">Sale or sharing of data</th><td>None.</td></tr>
   </tbody>
 </table>
@@ -114,7 +114,7 @@ tbody th { font-weight: 600; color: var(--ink); }
 <ul>
   <li><strong>Prayer log:</strong> prayers you mark as prayed, make-up (qada) prayers and rest days.</li>
   <li><strong>Favourites:</strong> duas you save.</li>
-  <li><strong>Settings:</strong> zone or district, language, theme and alert preferences.</li>
+  <li><strong>Settings:</strong> zone or district, language, theme and alert preferences, including the mosque you choose for the mosque alert (its name and map position, not yours).</li>
 </ul>
 <p>This data is not accessible to the developer. It is kept until you delete it.</p>
 <h3>2.1 Deleting your data</h3>
@@ -128,13 +128,13 @@ tbody th { font-weight: 600; color: var(--ink); }
 <table>
   <thead><tr><th scope="col">Permission</th><th scope="col">Android name</th><th scope="col">Purpose</th></tr></thead>
   <tbody>
-    <tr><th scope="row">Approximate location</th><td><code>ACCESS_COARSE_LOCATION</code></td><td>Find the nearest ACJU prayer-time zone. Requested only when you choose it; a manual district picker is available instead.</td></tr>
+    <tr><th scope="row">Approximate location</th><td><code>ACCESS_COARSE_LOCATION</code></td><td>Find the nearest ACJU prayer-time zone, and list mosques near you for the mosque alert. Requested only when you choose it; a manual district picker, and searching mosques by name, are available instead.</td></tr>
     <tr><th scope="row">Notifications</th><td><code>POST_NOTIFICATIONS</code></td><td>Prayer alerts and the panel showing all five prayer times.</td></tr>
     <tr><th scope="row">Alarms and reminders</th><td><code>USE_EXACT_ALARM</code>, <code>SCHEDULE_EXACT_ALARM</code></td><td>Deliver prayer alerts at the exact minute.</td></tr>
     <tr><th scope="row">Full-screen alarm</th><td><code>USE_FULL_SCREEN_INTENT</code></td><td>Show the Fajr wake-up alarm over the lock screen while it rings.</td></tr>
     <tr><th scope="row">Run at start-up</th><td><code>RECEIVE_BOOT_COMPLETED</code></td><td>Reschedule alerts after the phone restarts.</td></tr>
     <tr><th scope="row">Keep awake</th><td><code>WAKE_LOCK</code></td><td>Finish scheduling alerts without the phone sleeping midway.</td></tr>
-    <tr><th scope="row">Internet</th><td><code>INTERNET</code></td><td>Stream Quran recitation. Prayer times, Quran text, duas and alerts work offline.</td></tr>
+    <tr><th scope="row">Internet</th><td><code>INTERNET</code></td><td>Stream Quran recitation and, if you turn them on, send crash reports. Prayer times, Quran text, duas and alerts work offline.</td></tr>
     <tr><th scope="row">Background playback</th><td><code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code></td><td>Continue recitation with the screen locked or the app in the background.</td></tr>
   </tbody>
 </table>
@@ -148,17 +148,22 @@ tbody th { font-weight: 600; color: var(--ink); }
 <h3>4.3 Your phone's text-to-speech</h3>
 <p>If you tap Read aloud, the app passes one sentence, the next prayer and its time, to the text-to-speech engine installed on your phone (for example Google's). Nothing else is passed. The engine is part of your phone, not of this app, and follows its own privacy policy.</p>
 <h3>4.4 External links</h3>
-<p>Some items, such as this policy, the Play Store page, credits and the feedback email, open in your browser or email app. The app sends no data with them. Those apps and websites follow their own privacy policies.</p>
+<p>Some items, such as this policy, the Play Store page, credits, the feedback form and the feedback email, open in your browser or email app. Apart from the feedback form, the app sends no data with them. <strong>Directions</strong> on the mosque alert opens your maps app (such as Google Maps) with the mosque's position, or the name you typed; the app does not send your location, and your maps app works out the route itself. Those apps and websites follow their own privacy policies.</p>
+<h3>4.5 Feedback form</h3>
+<p>More &rarr; Feedback &amp; complaints opens a Google Form in your browser. The app may fill in one field with the app version, your phone's make and model, its Android version and the app language, so problems can be traced. You can see and change this field before sending, and nothing is sent unless you submit the form. What you write and any screenshots you attach go to the developer through Google Forms, under <a href="https://policies.google.com/privacy">Google's privacy policy</a>. Attaching a file needs you to sign in to Google, and Google adds your account name to the file's name. Please don't include personal details you don't want to share. To have a submission deleted, email the address below.</p>
+<h3>4.6 Crash reports (Google Firebase Crashlytics)</h3>
+<p>Crash reports are <strong>off unless you turn them on</strong> in <strong>More &rarr; Settings &rarr; Privacy</strong>. While they are on, if the app crashes or hits an error, it sends a report to the developer through Google Firebase Crashlytics over HTTPS. A report contains the error and where in the app it happened, the app version, your phone's make and model, its Android version, and the state of the app at the time (such as whether it was in the foreground, free memory and disk space). Firebase also records when the app is opened, so the developer can see how many sessions run without a crash. Reports are identified by a random installation ID that Firebase creates; it is not your name, phone number, Google account or advertising ID, and the developer cannot link it to you. Reports never include your prayer log, favourites, location or settings.</p>
+<p>Google processes the reports for the developer as a service provider, under the <a href="https://firebase.google.com/support/privacy">Firebase privacy and security terms</a>, and keeps them for 90 days. Turning crash reports off stops sending at once and deletes any reports waiting on the phone.</p>
 
 <h2 id="security"><span class="num">5</span>Security</h2>
-<p>Data is held in Android's private app storage, which other apps cannot read. The developer keeps no copy on any server. Recitation is streamed over an encrypted HTTPS connection.</p>
+<p>Data is held in Android's private app storage, which other apps cannot read. The developer keeps no copy on any server. Recitation and crash reports are sent over encrypted HTTPS connections.</p>
 
 <h2 id="rights"><span class="num">6</span>Your rights</h2>
-<p>The developer collects no personal data, so holds nothing about you to access, correct or delete. You control all data the app stores and can delete it at any time (section 2.1).</p>
+<p>The developer collects no personal data. Optional crash reports (section 4.6) carry only a random installation ID, which the developer cannot link to you, and are deleted after 90 days. You control all data the app stores and can delete it at any time (section 2.1).</p>
 <p>For questions or concerns under Sri Lanka's Personal Data Protection Act, No. 9 of 2022, or any other privacy law, contact the developer (section 9).</p>
 
 <h2 id="children"><span class="num">7</span>Children</h2>
-<p>The app is intended for a general audience and is not directed at children under 13. It collects no personal data from any user, including children.</p>
+<p>The app is intended for a general audience and is not directed at children under 13. It collects no personal data from any user, including children; optional crash reports hold only the technical details in section 4.6.</p>
 
 <h2 id="changes"><span class="num">8</span>Changes to this policy</h2>
 <p>If the app changes how it handles information, for example by adding a feature that uses the network, this page will be updated before that version is released and the effective date above will change.</p>
