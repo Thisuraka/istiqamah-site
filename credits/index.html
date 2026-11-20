@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Sources and Credits · Istiqamah</title>
+<meta name="description" content="Sources, credits and open-source licences for Istiqamah, the Sri Lanka prayer times app.">
+<link rel="icon" href="../icon.png">
+<style>
+:root {
+  --page: #FFFFFF; --side: #F7F9FC; --rule: #E3E7EF; --rule-strong: #CBD2DF;
+  --ink: #1F1B2D; --body: #3A3750; --muted: #6B6880; --accent: #4A5FA8; --accent-bg: #F0F3FB;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--page); color: var(--body); font: 15.5px/1.7 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif; }
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+code { font: .85em/1.4 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; background: var(--side); border: 1px solid var(--rule); border-radius: 4px; padding: .05rem .3rem; overflow-wrap: anywhere; }
+
+.top { border-bottom: 1px solid var(--rule); background: linear-gradient(180deg, #FFFBFD, #EAF3FD); }
+.top-in { max-width: 72rem; margin: 0 auto; padding: .85rem 1rem; display: flex; align-items: center; gap: .6rem; font-size: .9rem; }
+.top img { width: 24px; height: 24px; border-radius: 6px; }
+.top a { color: var(--ink); font-weight: 650; text-decoration: none; }
+.top .crumb { color: var(--muted); }
+
+.layout { max-width: 72rem; margin: 0 auto; padding: 0 1rem; display: grid; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .layout { grid-template-columns: 15rem minmax(0, 1fr); gap: 3.5rem; } }
+
+aside { display: none; }
+@media (min-width: 900px) {
+  aside { display: block; position: sticky; top: 0; align-self: start; max-height: 100vh; overflow: auto; padding: 2.5rem 0; font-size: .875rem; }
+}
+aside p { margin: 0 0 .6rem; color: var(--muted); font-size: .72rem; font-weight: 650; letter-spacing: .1em; text-transform: uppercase; }
+aside ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--rule); }
+aside li a { display: block; padding: .3rem 0 .3rem .9rem; margin-left: -1px; border-left: 2px solid transparent; color: var(--body); text-decoration: none; }
+aside li a:hover { color: var(--accent); border-left-color: var(--accent); }
+
+main { max-width: 46rem; padding: 2.5rem 0 5rem; }
+.doc-head { border-bottom: 1px solid var(--rule); padding-bottom: 1.5rem; margin-bottom: 2rem; }
+h1 { margin: 0 0 .5rem; color: var(--ink); font-size: 2rem; line-height: 1.2; letter-spacing: -.015em; }
+.doc-head .sum { margin: 0 0 1.25rem; font-size: 1.02rem; }
+.meta { display: grid; grid-template-columns: max-content 1fr; gap: .25rem 1.5rem; margin: 0; font-size: .875rem; }
+.meta dt { color: var(--muted); }
+.meta dd { margin: 0; color: var(--ink); }
+
+h2 { margin: 2.75rem 0 .8rem; padding-bottom: .4rem; border-bottom: 1px solid var(--rule); color: var(--ink); font-size: 1.3rem; line-height: 1.3; letter-spacing: -.01em; scroll-margin-top: 1rem; }
+h3 { margin: 1.6rem 0 .4rem; color: var(--ink); font-size: 1rem; }
+.num { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: .6rem; }
+p { margin: .65rem 0; }
+ul { margin: .5rem 0; padding-left: 1.3rem; }
+li { margin: .3rem 0; }
+strong { color: var(--ink); font-weight: 600; }
+
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .9rem; }
+th, td { text-align: left; vertical-align: top; padding: .6rem .75rem; border: 1px solid var(--rule); }
+thead th { background: var(--side); color: var(--ink); font-weight: 600; font-size: .8rem; letter-spacing: .03em; text-transform: uppercase; }
+tbody th { font-weight: 600; color: var(--ink); }
+.wrap-table { overflow-x: auto; }
+.wrap-table table { min-width: 34rem; }
+
+.note { margin: 1.25rem 0; padding: .75rem 1rem; border: 1px solid var(--rule); border-left: 3px solid var(--accent); background: var(--accent-bg); font-size: .925rem; }
+.note p { margin: 0; }
+.note .label { display: block; color: var(--accent); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .2rem; }
+
+.doc-foot { margin-top: 3.5rem; padding-top: 1rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<div class="top"><div class="top-in"><img src="../icon.png" alt=""><a href="../">Istiqamah</a><span class="crumb">/ Sources and credits</span></div></div>
+<div class="layout">
+<aside aria-label="Contents"><p>On this page</p><ol><li><a href="#sources">1. Sources</a></li><li><a href="#software">2. Open-source software</a></li></ol></aside>
+<main>
+<div class="doc-head"><h1>Sources and credits</h1><p class="sum">Where the content in Istiqamah comes from, and the licences it is shared under. Thank you to everyone whose work makes the app possible.</p></div>
+<h2 id="sources"><span class="num">1</span>Sources</h2>
+<h3>Prayer times</h3><p>All Ceylon Jamiyyathul Ulama (ACJU), from its published timetable. Times the timetable lacks are calculated and marked so in the app. <a href="https://www.acju.lk/prayer-times/">www.acju.lk/prayer-times</a></p><h3>Quran text</h3><p>Tanzil Quran Text (Uthmani, Version 1.1). Copyright (C) 2007-2026 Tanzil Project. Creative Commons Attribution 3.0. Shown unchanged; updates at <a href="https://tanzil.net">tanzil.net</a>. <a href="TANZIL-NOTICE.txt">Full notice</a>.</p><h3>Transliteration</h3><p>en.transliteration, Tanzil Project (<a href="https://tanzil.net">tanzil.net</a>), via alquran.cloud.</p><h3>English meaning</h3><p>Talal Itani, “Quran in English: Clear, Pure, Easy to Read”. Free to use and share, as the translator states. Shown unchanged. <a href="https://www.clearquran.com">www.clearquran.com</a></p><h3>Recitation</h3><p>Mishary Rashid Alafasy, Mahmoud Khalil Al-Husary (also his teaching recitation), Mohamed Siddiq Al-Minshawi and Abdul Basit Abdus Samad, streamed from EveryAyah. Nothing is saved on the phone. <a href="https://everyayah.com">everyayah.com</a></p><h3>Adhan sounds</h3><p>“The Adhan - Muslim Call to Prayer - Aaqib Azeez” by Atcovi, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>; silence at the start trimmed (<a href="https://commons.wikimedia.org/wiki/File:The_Adhan_-_Muslim_Call_to_Prayer_-_Aaqib_Azeez.mp3">source</a>). “Azan” by Andrewler, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> (<a href="https://commons.wikimedia.org/wiki/File:Azan.ogg">source</a>).</p><h3>Related verses</h3><p>Quranpedia.net’s topic index (topics.json, version 2026-11-14): ayat that share a topic. <a href="https://quranpedia.net">quranpedia.net</a></p><h3>Duas and hadith</h3><p>Hisn al-Muslim (hisnmuslim.com), fawazahmed0/hadith-api and alquran.cloud. Every item shows its reference in the app.</p><h3>Quotes after each prayer</h3><p>Ayat from Talal Itani’s Clear Quran; hadith from Sahih al-Bukhari and Sahih Muslim, via fawazahmed0/hadith-api.</p><h3>Map data</h3><p>Town locations and the mosque list: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL. More mosques from Overture Maps Foundation, CDLA-Permissive-2.0. The mosque list is published at <a href="../data/mosques.json">/data/mosques.json</a>. <a href="MOSQUES-NOTICE.txt">Full notice</a>.</p><h3>Fonts</h3><p><a href="OFL-Amiri.txt">Amiri</a>, <a href="OFL-Fraunces.txt">Fraunces</a>, <a href="OFL-Nunito.txt">Nunito</a>, <a href="OFL-NotoSansTamil.txt">Noto Sans Tamil</a> and <a href="OFL-NotoSansSinhala.txt">Noto Sans Sinhala</a>, under the SIL Open Font License 1.1.</p>
+<h2 id="software"><span class="num">2</span>Open-source software</h2>
+<p>Istiqamah is built with <a href="https://flutter.dev">Flutter</a> and the packages below. The full text of every licence, including the Flutter engine’s notices, is in <a href="open-source-licences.txt">open-source-licences.txt</a>.</p>
+<div class="wrap-table"><table><thead><tr><th>Licence</th><th>Packages</th></tr></thead><tbody><tr><th>Apache-2.0</th><td>clock, material_color_utilities, simple_gesture_detector, sky_engine, sqlcipher_flutter_libs, table_calendar</td></tr><tr><th>BSD-2-Clause</th><td>hijri, timezone</td></tr><tr><th>BSD-3-Clause</th><td>_flutterfire_internals, android_alarm_manager_plus, async, characters, charcode, collection, convert, cross_file, crypto, ffi, ffi_leak_tracker, file, firebase_core, firebase_core_platform_interface, firebase_core_web, firebase_crashlytics, firebase_crashlytics_platform_interface, fixnum, flutter, flutter, flutter_local_notifications, flutter_local_notifications_linux, flutter_local_notifications_platform_interface, flutter_local_notifications_web, flutter_local_notifications_windows, go_router, home_widget, http, http_parser, intl, jni, jni_flutter, jni_util, json_annotation, meta, mime, objective_c, package_info_plus, package_info_plus_platform_interface, path, path_provider, path_provider_android, path_provider_foundation, path_provider_linux, path_provider_platform_interface, path_provider_windows, platform, plugin_platform_interface, pub_semver, scrollable_positioned_list, share_plus, share_plus_platform_interface, shared_preferences, shared_preferences_android, shared_preferences_foundation, shared_preferences_linux, shared_preferences_platform_interface, shared_preferences_web, shared_preferences_windows, source_span, stack_trace, stream_channel, string_scanner, term_glyph, typed_data, url_launcher_linux, url_launcher_platform_interface, url_launcher_web, url_launcher_windows, vector_math, web, win32, xdg_directories</td></tr><tr><th>MIT</th><td>adhan_dart, android_file_picker, archive, cupertino_icons, drift, drift_flutter, file_picker, file_picker_darwin, file_picker_linux, file_picker_platform_interface, file_picker_web, flutter_compass_v2, flutter_riverpod, geolocator, geolocator_android, geolocator_apple, geolocator_linux, geolocator_platform_interface, geolocator_web, geolocator_windows, image, permission_handler, permission_handler_android, permission_handler_apple, permission_handler_html, permission_handler_platform_interface, permission_handler_windows, petitparser, posix, riverpod, sqlite3, sqlite3_flutter_libs, state_notifier, uuid, windows_file_picker, xml</td></tr><tr><th>MPL-2.0</th><td>dbus, geoclue, gsettings</td></tr></tbody></table></div>
+<div class="note"><span class="label">Note</span><p>Prayer times come from ACJU's published timetable. Istiqamah is not affiliated with or endorsed by ACJU.</p></div>
+<p class="doc-foot">© 2026 Istiqamah · <a href="../">Home</a> · <a href="../privacy/">Privacy policy</a></p>
+</main>
+</div>
+</body>
+</html>
